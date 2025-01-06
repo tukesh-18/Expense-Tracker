@@ -11,7 +11,7 @@ const ExpenseList = ({ expenses, deleteExpense, changeExpenseToUpdate }) => {
           return (
             <Transaction
               index={i}
-              key={expense.id}
+              key={`${expense.id}-${i}`}
               expense={expense}
               deleteExpense={deleteExpense}
               changeExpenseToUpdate={changeExpenseToUpdate}

@@ -23,14 +23,14 @@ const Transaction = ({
         setCurrentHoverIndex(null);
       }}
     >
-      <div>{expense.text}</div>
+      <div>{expense.text || "No description"}</div>
       <div className={styles.transactionOptions}>
         <div
           className={`${styles.amount} ${
             currentHoverIndex === index && styles.movePrice
           }`}
         >
-          ${expense.amount}
+          ${expense.amount !== undefined ? expense.amount.toFixed(2) : "0.00"}
         </div>
         <div
           className={`${styles.btnContainer} ${
